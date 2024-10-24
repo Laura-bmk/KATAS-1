@@ -167,18 +167,13 @@ function convert(number){
   }
 
   // KATA 9 (Escribir la función sort_cards() que ordene una lista barajada de tarjetas, de modo que cualquier lista de tarjetas dada se ordene por rango, sin importar la colección inicial.)
-  function sort_cards(cards) {
-    //  orden de las cartas segun codewars
-    var order = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'];
-    
-    // Función para comparar dos cartas basadas en el orden
-    function compararCards(card1, card2) {
-        return order.indexOf(card1) - order.indexOf(card2);
-      }
-    
-      // Ordenar las cartas usando la función de comparación
-      return cards.sort(compararCards);
-    }
+  function sortCards(cards){
+    //cada carta tiene un valor
+    var order = {'A': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13};
+    //se ordenan conforme su valor
+    return cards.sort((a, b) => order[a] - order[b]);
+  }
+  
 
     // kATA 10
 
